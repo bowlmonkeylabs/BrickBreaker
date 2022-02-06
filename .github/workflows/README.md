@@ -1,7 +1,7 @@
 # Configuring automated build for a new project
 ## Repository configuration
 Each project needs to request a license from Unity. (really each GitHub runner/machine used, but the machine should persist for the repo).
-  - First run the "unity-activation" workflow, then follow the [game-ci instructions here|https://game.ci/docs/github/activation#personal-license] to registed the generated license artifact with Unity.
+  - First run the "unity-activation" workflow, then follow the [game-ci instructions here|https://game.ci/docs/github/activation#personal-license] to register the generated license artifact with Unity.
   - Then save the contents of the license provided by Unity as a repository secrete UNITY_LICENSE
 
 ## Organization configuration
