@@ -8,10 +8,8 @@ namespace DefaultNamespace
         [SerializeField] private string ballTag = "Ball";
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log("Received");
-            
-            if (other.gameObject.tag.Equals(ballTag))
-                Destroy(this);
+            if(other.gameObject.tag.Equals(ballTag))
+                Destroy(gameObject);
         }
     }
 }
