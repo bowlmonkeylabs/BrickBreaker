@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace BML.Scripts
 {
     public class BrickController : MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace DefaultNamespace
+namespace BML.Scripts
 {
     public class PaddleController : MonoBehaviour
     {
