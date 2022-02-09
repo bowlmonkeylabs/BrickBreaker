@@ -9,14 +9,15 @@ namespace BML.Scripts
     {
         [SerializeField] private TMP_Text displayMessageText;
         [SerializeField] private GameEvent ballPassedPaddleEvent;
+        [SerializeField] private GameEvent allBricksBroken;
         [SerializeField] private float MessageTime = 3f;
         [SerializeField] private string LoseMessage = "You Lose!";
         [SerializeField] private string WinMessage = "You Don't Lose!";
-        //DisplayMessage("You lose!");
 
-        private void Start()
+        private void Awake()
         {
             ballPassedPaddleEvent.Subscribe(OnLose);
+            allBricksBroken.Subscribe(OnWin);
         }
 
         private void OnLose()
@@ -39,6 +40,7 @@ namespace BML.Scripts
         private void OnDestroy()
         {
             ballPassedPaddleEvent.Unsubscribe(OnLose);
+            allBricksBroken.Unsubscribe(OnWin);
         }
 
         private void RestartScene()
