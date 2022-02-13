@@ -27,7 +27,7 @@ namespace BML.Build
                 // TODO below this line I do not know the correct extensions
                 // { BuildTarget.StandaloneLinux64, (extension:"") },
                 // { BuildTarget.StandaloneOSX, (extension:"") },
-                // { BuildTarget.WebGL, (extension:"") },
+                { BuildTarget.WebGL, new BuildTargetInfo(extension:"") }, // For WebGL this is just used in the folder name, Unity assigns the actual extensions
             };
 
         #region Build methods

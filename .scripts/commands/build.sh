@@ -32,9 +32,8 @@ fi
     -quit -batchmode \
     -logfile - \
     -executeMethod BML.Build.Builder.BuildProjectCommandLine \
-    -buildTarget StandaloneWindows64 \
+    -buildTarget WebGL \
     -overwriteMode Overwrite \
-    -buildOptions Development \
-    -buildOptions AutoRunPlayer
+    -buildOptions Development
 echo ""
 echo "Unity Editor process exited with code $?"
