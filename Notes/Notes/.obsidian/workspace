@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "60d00a001aa40bdb",
+    "type": "split",
+    "children": [
+      {
+        "id": "5fd6a6959d5aafc5",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Sprint1 Feedback/David Feedback.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "641f9a42bfde58e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "5828c2b61990abaa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5b3007e57340275f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "5ad5b3ee63b1e95f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c2ed01020b745656",
+    "type": "split",
+    "children": [
+      {
+        "id": "95a50ad5d1f467ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9e1fcd723acd041f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Sprint1 Feedback/David Feedback.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5fd6a6959d5aafc5",
+  "lastOpenFiles": [
+    "Sprint1 Feedback/David Feedback.md",
+    "Templates/General Questions.md",
+    "Templates/Sprint 1 Questions.md",
+    "Untitled.md"
+  ]
+}
