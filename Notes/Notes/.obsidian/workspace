@@ -4,15 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5fd6a6959d5aafc5",
+        "id": "6e149d3a6668c4c7",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Sprint1 Feedback/David Feedback.md",
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sprint1 Feedback/David Feedback.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +82,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "5fd6a6959d5aafc5",
+  "active": "6e149d3a6668c4c7",
   "lastOpenFiles": [
     "Sprint1 Feedback/David Feedback.md",
     "Templates/General Questions.md",
