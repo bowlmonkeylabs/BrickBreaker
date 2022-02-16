@@ -33,7 +33,7 @@ jobs:
           path: .git/lfs
           key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
 
-      - name: Git LFS Pull
+      - name: Git LFS pull
         run: |
           git lfs pull
           git add .
@@ -54,10 +54,8 @@ jobs:
           
       - name: Test unversioned
         run: |
-          pwd
-          ls
-          ls Assets
-          ls Assets/Unversioned
+          ls Assets/Private/Plugins/Sirenix
+          exit 1
           
       - name: Cache unversioned
         id: cache-unversioned
