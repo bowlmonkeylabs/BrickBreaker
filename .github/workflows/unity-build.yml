@@ -52,6 +52,13 @@ jobs:
           path: Assets/Unversioned
           token: ${{ secrets.REPOS_ACCESS_TOKEN }}
           
+      - name: Test unversioned
+        run: |
+          pwd
+          ls
+          ls Assets
+          ls Assets/Unversioned
+          
       - name: Cache unversioned
         id: cache-unversioned
         uses: actions/cache@v2
