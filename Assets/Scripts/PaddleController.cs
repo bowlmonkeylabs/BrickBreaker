@@ -19,9 +19,6 @@ namespace BML.Scripts
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            // var velocity = other.rigidbody.velocity;
-            // other.rigidbody.velocity = new Vector2(5, 0);
-
             var contactPoint = other.contacts[0].point;
             var differenceFromCenter = contactPoint.x - paddleRb.position.x;
             var sign = Mathf.Sign(differenceFromCenter);
