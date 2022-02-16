@@ -887,10 +887,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 946160630}
+  - component: {fileID: 946160632}
+  - component: {fileID: 946160633}
   - component: {fileID: 946160629}
   - component: {fileID: 946160628}
-  - component: {fileID: 946160633}
-  - component: {fileID: 946160632}
   - component: {fileID: 946160631}
   m_Layer: 0
   m_Name: Paddle
@@ -1024,7 +1024,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddleRb: {fileID: 946160631}
+  paddleCollider: {fileID: 946160628}
   moveSpeed: 5
+  angularInfluence:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 25
+      outSlope: 25
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4
+      value: 10
+      inSlope: Infinity
+      outSlope: 33.333332
+      tangentMode: 71
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 30
+      inSlope: 57.272697
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 0
+      inWeight: 0.09433965
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &946160633
 MonoBehaviour:
   m_ObjectHideFlags: 0
