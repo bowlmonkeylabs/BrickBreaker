@@ -52,11 +52,6 @@ jobs:
           path: Assets/Unversioned
           token: ${{ secrets.REPOS_ACCESS_TOKEN }}
           
-      - name: Test unversioned
-        run: |
-          ls Assets/Private/Plugins/Sirenix
-          exit 1
-          
       - name: Cache unversioned
         id: cache-unversioned
         uses: actions/cache@v2
