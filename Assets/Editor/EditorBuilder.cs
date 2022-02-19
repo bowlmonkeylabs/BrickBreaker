@@ -5,6 +5,16 @@ namespace BML.Build
 {
     public class EditorBuilder : MonoBehaviour
     {
+        [MenuItem("Build/Build WebGL (Development)")]
+        public static void BuildWebGlDevelopment()
+        {
+            Builder.BuildProject(
+                BuildTarget.WebGL,
+                BuildOptions.Development,
+                Builder.OverwriteMode.Overwrite
+            );
+        }
+        
         [MenuItem("Build/Build Windows (Development)")]
         public static void BuildWindowsDevelopment()
         {
