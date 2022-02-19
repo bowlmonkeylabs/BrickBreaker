@@ -76,6 +76,10 @@ jobs:
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
+            
+      - name: Test project structure
+        run: |
+          ls Assets/Plugins/Sirenix/Assemblies
 
       # Test
 #       - name: Run tests
