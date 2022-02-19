@@ -79,7 +79,8 @@ jobs:
             
       - name: Test project structure
         run: |
-          ls Assets/Plugins/Sirenix/Assemblies
+          pwd
+          ls ./Assets/Private/Plugins/Sirenix/Assemblies
 
       # Test
 #       - name: Run tests
