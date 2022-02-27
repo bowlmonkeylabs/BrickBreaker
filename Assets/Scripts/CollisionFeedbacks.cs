@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace BML.Scripts
@@ -10,6 +11,7 @@ namespace BML.Scripts
     {
         public LayerMask layerMask;
         public string tag;
+        [LabelText("Include/Exclude Tag")] public bool includeExcludeTag;
         public MMFeedbacks feedbacks;
     }
     
@@ -24,7 +26,8 @@ namespace BML.Scripts
             collisionTypes.ForEach(collisionType =>
             {
                 var matchesLayer = collisionType.layerMask == (collisionType.layerMask | (1 << colLayer));
-                var matchesTag = string.IsNullOrEmpty(collisionType.tag) || collisionType.tag == colTag;
+                var matchesTag = string.IsNullOrEmpty(collisionType.tag) 
+                                 || (collisionType.includeExcludeTag == (collisionType.tag == colTag));
                 if (matchesLayer && matchesTag)
                 {
                     collisionType.feedbacks.PlayFeedbacks();
