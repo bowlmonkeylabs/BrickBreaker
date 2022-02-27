@@ -1642,7 +1642,7 @@ MonoBehaviour:
   paddleCollider: {fileID: 946160628}
   ballCatchPivot: {fileID: 25705346}
   moveSpeed: 5
-  aimTurnSpeed: 90
+  aimTurnSpeed: 120
   angularInfluenceWeight:
     serializedVersion: 2
     m_Curve:
