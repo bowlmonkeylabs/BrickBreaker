@@ -1,4 +1,5 @@
-﻿using MyAssets.ScriptableObjects.Events;
+﻿using MoreMountains.Feedbacks;
+using MyAssets.ScriptableObjects.Events;
 using UnityEngine;
 
 namespace BML.Scripts
@@ -8,16 +9,22 @@ namespace BML.Scripts
         [SerializeField] private string ballTag = "Ball";
         [SerializeField] private GameEvent brickBroken;
         [SerializeField] private GameObject leanTweenOwner;
+        [SerializeField] private Collider2D brickCollider;
+        [SerializeField] private MMFeedbacks onBreakFeedbacks;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
             if(other.gameObject.tag.Equals(ballTag))
             {
-                Destroy(gameObject);
-                LeanTween.value(leanTweenOwner, 0, 1, 0.01f).setOnComplete(() => {
-                    brickBroken.Raise();
-                });
+                BreakBrick();
             }
+        }
+
+        private void BreakBrick()
+        {
+            brickCollider.enabled = false;
+            onBreakFeedbacks.PlayFeedbacks();
+            brickBroken.Raise();
         }
     }
 }
