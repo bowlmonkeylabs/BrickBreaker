@@ -15,20 +15,35 @@ namespace BML.Scripts
         [SerializeField] private Transform ballCatchPivot;
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float aimTurnSpeed = 5f;
+        [SerializeField] private float maxReleaseTime = 3f;
         [SerializeField] private AnimationCurve angularInfluenceWeight;
         [SerializeField] private float maxAngularInfluence = 60f;
         [SerializeField] private string ballTag = "Ball";
         [SerializeField] private bool locationInfluencesAngle = true;
         [SerializeField] private FloatReference ballSpeed;
         [SerializeField] private BoolReference isGameStarted;
+        [SerializeField] private TimerVariable releaseTimer;
 
+        private LTDescr releaseTween;
         private Vector2 moveInput;
         private bool isBallInCatchTrigger;
         private bool isBallCaught;
         private float currentAimAngle;
 
+        private void Awake()
+        {
+            releaseTimer.SubscribeFinished(ReleaseBall);
+        }
+
+        private void OnDestroy()
+        {
+            releaseTimer.UnsubscribeFinished(ReleaseBall);
+        }
+
         private void Update()
         {
+            releaseTimer.UpdateTime();
+            
             if (!isGameStarted.Value) return;
 
             if (isBallCaught)
@@ -59,17 +74,23 @@ namespace BML.Scripts
             
             if (isBallCaught)
             {
-                //Release
-                ballRb.velocity = aimTargeter.up * ballSpeed.Value;
-                isBallCaught = false;
-                aimTargeter.gameObject.SetActive(false);
+                ReleaseBall();
                 return;
             }
 
             isBallCaught = true;
             paddleRb.velocity = Vector2.zero;
             aimTargeter.gameObject.SetActive(true);
+            releaseTimer.StartTimer();
             currentAimAngle = 0;
+        }
+
+        private void ReleaseBall()
+        {
+            ballRb.velocity = aimTargeter.up * ballSpeed.Value;
+            isBallCaught = false;
+            aimTargeter.gameObject.SetActive(false);
+            releaseTimer.StopTimer();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
