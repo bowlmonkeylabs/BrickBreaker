@@ -25,14 +25,19 @@ namespace BML.Scripts
         private Vector2 moveInput;
         private bool isBallInCatchTrigger;
         private bool isBallCaught;
+        private float currentAimAngle;
 
         private void Update()
         {
             if (!isGameStarted.Value) return;
-            
+
             if (isBallCaught)
-                aimTargeter.Rotate(Vector3.back, moveInput.x * aimTurnSpeed * Time.deltaTime);
-            else
+            {
+                currentAimAngle += moveInput.x * aimTurnSpeed * Time.deltaTime;
+                currentAimAngle = Mathf.Clamp(currentAimAngle, -maxAngularInfluence, maxAngularInfluence);
+                aimTargeter.rotation = Quaternion.AngleAxis(currentAimAngle, Vector3.back);
+            }
+            else if (!isBallCaught)
                 paddleRb.velocity = moveInput * moveSpeed;
             
         }
@@ -64,7 +69,7 @@ namespace BML.Scripts
             isBallCaught = true;
             paddleRb.velocity = Vector2.zero;
             aimTargeter.gameObject.SetActive(true);
-            aimTargeter.rotation = Quaternion.identity;
+            currentAimAngle = 0;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
