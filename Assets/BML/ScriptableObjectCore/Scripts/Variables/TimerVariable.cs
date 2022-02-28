@@ -85,9 +85,7 @@ public class TimerVariable : ScriptableObject
                 OnFinished?.Invoke();
             }
         }
-        
     }
-    
 }
 
 [Serializable]
