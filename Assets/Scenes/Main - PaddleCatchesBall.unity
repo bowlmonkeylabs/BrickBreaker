@@ -1652,7 +1652,7 @@ MonoBehaviour:
   paddleCollider: {fileID: 946160628}
   ballCatchPivot: {fileID: 25705346}
   moveSpeed: 5
-  aimTurnSpeed: 120
+  aimTurnSpeed: 240
   angularInfluenceWeight:
     serializedVersion: 2
     m_Curve:
@@ -2096,6 +2096,7 @@ GameObject:
   - component: {fileID: 1095148096}
   - component: {fileID: 1095148100}
   - component: {fileID: 1095148099}
+  - component: {fileID: 1095148095}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -2103,6 +2104,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1095148095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095148094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841b72de2996c5c40bfb394f3d0e0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Feedbacks: []
+  InitializationMode: 2
+  SafeMode: 3
+  Direction: 0
+  AutoChangeDirectionOnEnd: 0
+  AutoPlayOnStart: 0
+  AutoPlayOnEnable: 0
+  DurationMultiplier: 1
+  DisplayFullDurationDetails: 0
+  CooldownDuration: 0
+  InitialDelay: 0
+  CanPlayWhileAlreadyPlaying: 1
+  FeedbacksIntensity: 1
+  Events:
+    TriggerMMFeedbacksEvents: 0
+    TriggerUnityEvents: 1
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnPause:
+      m_PersistentCalls:
+        m_Calls: []
+    OnResume:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRevert:
+      m_PersistentCalls:
+        m_Calls: []
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  DebugActive: 0
 --- !u!50 &1095148096
 Rigidbody2D:
   serializedVersion: 4
