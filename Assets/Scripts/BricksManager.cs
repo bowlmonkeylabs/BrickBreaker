@@ -1,3 +1,4 @@
+using System.Linq;
 using MyAssets.ScriptableObjects.Events;
 using UnityEngine;
 
@@ -16,7 +17,9 @@ namespace BML.Scripts
 
         private void CheckBricksRemaining()
         {
-            if(this.bricksParent.childCount <= 0)
+            var bricks = bricksParent.GetComponentsInChildren<BrickController>();
+            var anyBricksRemain = bricks.Any(brick => brick.IsNotBroken);
+            if (!anyBricksRemain)
             {
                 allBricksBroken.Raise();
             }

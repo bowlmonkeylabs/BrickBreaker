@@ -1,5 +1,7 @@
-﻿using MoreMountains.Feedbacks;
+﻿using System;
+using MoreMountains.Feedbacks;
 using MyAssets.ScriptableObjects.Events;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace BML.Scripts
@@ -12,6 +14,13 @@ namespace BML.Scripts
         [SerializeField] private Collider2D brickCollider;
         [SerializeField] private MMFeedbacks onBreakFeedbacks;
 
+        [ReadOnly] public bool IsNotBroken { get; private set; }
+
+        private void Awake()
+        {
+            IsNotBroken = true;
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if(other.gameObject.tag.Equals(ballTag))
@@ -23,8 +32,11 @@ namespace BML.Scripts
         private void BreakBrick()
         {
             brickCollider.enabled = false;
-            onBreakFeedbacks.PlayFeedbacks();
+
+            IsNotBroken = false;
             brickBroken.Raise();
+            
+            onBreakFeedbacks.PlayFeedbacks();
         }
     }
 }
