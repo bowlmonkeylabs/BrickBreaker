@@ -5,6 +5,9 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+public delegate void OnUpdate_();
+public delegate void OnFinished_();
+
 [Required]
 [InlineEditor(InlineEditorObjectFieldModes.Foldout)]
 [CreateAssetMenu(fileName = "TimerVariable", menuName = "Variables/TimerVariable", order = 0)]
@@ -15,8 +18,8 @@ public class TimerVariable : ScriptableObject
     [ShowInInspector, NonSerialized] private bool isFinished = false;
     [TextArea (7, 10)] [HideInInlineEditors] public String Description;
     
-    public delegate void OnUpdate_();
     public event OnUpdate_ OnUpdate;
+    public event OnFinished_ OnFinished;
 
     // public float Duration => duration;
     public float? RemainingTime => remainingTime;
@@ -59,6 +62,16 @@ public class TimerVariable : ScriptableObject
     {
         this.OnUpdate -= callback;
     }
+    
+    public void SubscribeFinished(OnFinished_ callback)
+    {
+        this.OnFinished += callback;
+    }
+
+    public void UnsubscribeFinished(OnFinished_ callback)
+    {
+        this.OnFinished -= callback;
+    }
 
     public void UpdateTime()
     {
@@ -69,6 +82,7 @@ public class TimerVariable : ScriptableObject
             if (remainingTime == 0)
             {
                 isFinished = true;
+                OnFinished?.Invoke();
             }
         }
         
@@ -224,4 +238,23 @@ public class TimerReference
         }
     }
     
+    public void Subscribe(OnUpdate_ callback)
+    {
+        Variable?.Subscribe(callback);
+    }
+
+    public void Unsubscribe(OnUpdate_ callback)
+    {
+        Variable?.Unsubscribe(callback);
+    }
+    
+    public void SubscribeFinished(OnFinished_ callback)
+    {
+        Variable?.SubscribeFinished(callback);
+    }
+
+    public void UnsubscribeFinished(OnFinished_ callback)
+    {
+        Variable?.UnsubscribeFinished(callback);
+    }
 }
