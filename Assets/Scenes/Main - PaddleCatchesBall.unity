@@ -1091,9 +1091,19 @@ MonoBehaviour:
   displayMessageText: {fileID: 1582123300}
   ballPassedPaddleEvent: {fileID: 11400000, guid: ed6711f492f491b44bd6b47ab4bd7a08, type: 2}
   allBricksBroken: {fileID: 11400000, guid: 00343660c935c154497f832947c546e5, type: 2}
+  catchPressed: {fileID: 11400000, guid: 9c74ba886eca567448afe329dbe11c6f, type: 2}
+  onGameStarted: {fileID: 11400000, guid: b99d3c7830166304184309f52d23eab3, type: 2}
+  isGameStarted:
+    UseConstant: 0
+    EnableInstanceOptions: 0
+    InstanceName: 
+    InstancePath: IntermediateProperties
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9ee83bd66ca1cc3459186982ee48592f, type: 2}
   MessageTime: 3
   LoseMessage: You Lose!
   WinMessage: You Don't Lose!
+  StartMessage: Press Space to Start
 --- !u!4 &731743471
 Transform:
   m_ObjectHideFlags: 0
@@ -1686,6 +1696,13 @@ MonoBehaviour:
     InstancePath: IntermediateProperties
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 2e603bb28e97428448ad539d24c72359, type: 2}
+  isGameStarted:
+    UseConstant: 0
+    EnableInstanceOptions: 0
+    InstanceName: 
+    InstancePath: IntermediateProperties
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9ee83bd66ca1cc3459186982ee48592f, type: 2}
 --- !u!114 &946160633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,6 +1750,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: BML.Scripts.PaddleController, BML.Scripts
         m_MethodName: ReceiveCatch
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 9c74ba886eca567448afe329dbe11c6f, type: 2}
+        m_TargetAssemblyTypeName: MyAssets.ScriptableObjects.Events.GameEvent, ScriptableObjectSystem
+        m_MethodName: Raise
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2140,6 +2169,7 @@ MonoBehaviour:
     InstancePath: IntermediateProperties
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 2e603bb28e97428448ad539d24c72359, type: 2}
+  onGameStarted: {fileID: 11400000, guid: b99d3c7830166304184309f52d23eab3, type: 2}
 --- !u!61 &1095148100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3071,7 +3101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -42.8}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582123300

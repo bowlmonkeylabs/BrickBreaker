@@ -1,4 +1,6 @@
-﻿using MyAssets.ScriptableObjects.Variables;
+﻿using System;
+using MyAssets.ScriptableObjects.Events;
+using MyAssets.ScriptableObjects.Variables;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
@@ -9,8 +11,19 @@ namespace BML.Scripts
         [SerializeField] private Rigidbody2D ballRb;
         [SerializeField] private Vector2 initialDirection;
         [SerializeField] private FloatReference ballSpeed;
+        [SerializeField] private GameEvent onGameStarted;
 
-        private void Start()
+        private void Awake()
+        {
+            onGameStarted.Subscribe(StartMoving);
+        }
+
+        private void OnDisable()
+        {
+            onGameStarted.Unsubscribe(StartMoving);
+        }
+
+        private void StartMoving()
         {
             ballRb.velocity = initialDirection.normalized * ballSpeed.Value;
         }
