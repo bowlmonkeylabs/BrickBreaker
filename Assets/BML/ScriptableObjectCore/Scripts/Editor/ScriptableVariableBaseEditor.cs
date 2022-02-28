@@ -92,7 +92,6 @@ namespace MyAssets.ScriptableObjects.Variables
             {
                 Type type = ((object)this.monoBehaviours[index]).GetType();
                 string scriptableObjectAssetName = ScriptUtility.GetScriptableObjectAssetName((ScriptableObject)this.target);
-                Debug.Log(this.target.name);
                 string str1 = char.ToLower(scriptableObjectAssetName[0]).ToString() + scriptableObjectAssetName.Substring(1);
                 bool flag = false;
                 for(; type != (Type)null && type != typeof(MonoBehaviour); type = type.BaseType)
