@@ -20,6 +20,7 @@ namespace BML.Scripts
         [SerializeField] private string ballTag = "Ball";
         [SerializeField] private bool locationInfluencesAngle = true;
         [SerializeField] private FloatReference ballSpeed;
+        [SerializeField] private BoolReference isGameStarted;
 
         private Vector2 moveInput;
         private bool isBallInCatchTrigger;
@@ -27,6 +28,8 @@ namespace BML.Scripts
 
         private void Update()
         {
+            if (!isGameStarted.Value) return;
+            
             if (isBallCaught)
                 aimTargeter.Rotate(Vector3.back, moveInput.x * aimTurnSpeed * Time.deltaTime);
             else
