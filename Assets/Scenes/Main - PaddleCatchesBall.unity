@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 25705349}
   - component: {fileID: 25705348}
   - component: {fileID: 25705347}
+  - component: {fileID: 25705350}
   m_Layer: 0
   m_Name: BallCatchPivot
   m_TagString: Untagged
@@ -242,6 +243,21 @@ MonoBehaviour:
     offset: 0
     spacing: 4
     shapeModifier: 1
+--- !u!114 &25705350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25705345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c502f7a8f04603a5617b8c1d85b28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimTargeterLine: {fileID: 25705349}
+  paddleReleaseTimer: {fileID: 11400000, guid: 3aabab72ece87f040ab3592e0f3b4fce, type: 2}
+  maxLineLength: 1
 --- !u!1001 &31636252
 PrefabInstance:
   m_ObjectHideFlags: 0

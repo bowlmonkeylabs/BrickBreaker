@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc5b292ef06e144f823671664e66571, type: 3}
   m_Name: ReleaseBallTimer
   m_EditorClassIdentifier: 
-  Duration: 3
+  Duration: 1.5
   Description: 
