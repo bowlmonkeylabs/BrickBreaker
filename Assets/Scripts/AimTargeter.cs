@@ -10,13 +10,15 @@ namespace BML.Scripts
         [SerializeField] private TimerVariable paddleReleaseTimer;
         [SerializeField] private float minLineLength = .1f;
         [SerializeField] private float maxLineLength = 1f;
+        [SerializeField] private AnimationCurve lengthCurve;
 
         private void Update()
         {
             if (paddleReleaseTimer.IsStopped) return;
             
             var percentToRelease = paddleReleaseTimer.ElapsedTime / paddleReleaseTimer.Duration;
-            aimTargeterLine.End = Mathf.Lerp(maxLineLength, minLineLength, percentToRelease) * Vector2.up;
+            var releaseFactor = lengthCurve.Evaluate(percentToRelease);
+            aimTargeterLine.End = Mathf.Lerp(maxLineLength, minLineLength, releaseFactor) * Vector2.up;
         }
     }
 }

@@ -257,7 +257,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimTargeterLine: {fileID: 25705349}
   paddleReleaseTimer: {fileID: 11400000, guid: 3aabab72ece87f040ab3592e0f3b4fce, type: 2}
-  maxLineLength: 1
+  minLineLength: 0.1
+  maxLineLength: 1.5
+  lengthCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &31636252
 PrefabInstance:
   m_ObjectHideFlags: 0
