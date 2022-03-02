@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnableDebugOnUpdate: 0
   Description: The balls speed
-  defaultValue: 5
-  runtimeValue: 0
+  defaultValue: 7
+  runtimeValue: 7
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 

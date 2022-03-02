@@ -52,6 +52,11 @@ namespace MyAssets.ScriptableObjects.Variables
             }
         }
 
+        public T DefaultValue
+        {
+            get => defaultValue;
+        }
+
         [Button]
         private void BroadcastUpdate()
         {
@@ -256,6 +261,25 @@ namespace MyAssets.ScriptableObjects.Variables
             {
                 if(Variable != null) Variable.Value = value;
                 else if(!UseConstant) Debug.LogError($"Trying to set {Name} variable that is null!");
+            }
+        }
+
+        public T DefaultValue
+        {
+            get
+            {
+                if(Variable != null)
+                    return UseConstant ? ConstantValue : Variable.DefaultValue;
+                else
+                {
+                    if(UseConstant)
+                        return ConstantValue;
+                    else
+                    {
+                        Debug.LogError($"Trying to access {Name} variable but none set in inspector!");
+                        return default(T);
+                    }
+                }
             }
         }
     }

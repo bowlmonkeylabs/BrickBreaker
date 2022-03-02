@@ -45,6 +45,7 @@ namespace BML.Scripts
 
         private void RestartScene()
         {
+            LeanTween.cancelAll();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
