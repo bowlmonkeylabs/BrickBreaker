@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Feedbacks;
 using MyAssets.ScriptableObjects.Events;
 using MyAssets.ScriptableObjects.Variables;
 using TMPro;
@@ -20,6 +21,8 @@ namespace BML.Scripts
         [SerializeField] private string LoseMessage = "You Lose!";
         [SerializeField] private string WinMessage = "You Don't Lose!";
         [SerializeField] private string StartMessage = "Press Space to Start";
+        [SerializeField] private MMFeedbacks WinFeedbacks;
+        [SerializeField] private MMFeedbacks LoseFeedbacks;
 
         private void Awake()
         {
@@ -54,12 +57,14 @@ namespace BML.Scripts
         private void OnLose()
         {
             DisplayMessage(LoseMessage);
+            LoseFeedbacks.PlayFeedbacks();
             LeanTween.value(this.gameObject, 0, 1, MessageTime).setOnComplete(RestartScene);
         }
 
         private void OnWin()
         {
             DisplayMessage(WinMessage);
+            WinFeedbacks.PlayFeedbacks();
             LeanTween.value(this.gameObject, 0, 1, MessageTime).setOnComplete(RestartScene);
         }
 
