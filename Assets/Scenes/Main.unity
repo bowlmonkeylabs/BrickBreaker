@@ -2193,6 +2193,8 @@ MonoBehaviour:
   moveSpeed: 15
   aimTurnSpeed: 240
   maxReleaseTime: 3
+  acceleration: 0.0175
+  deacceleration: 0.012
   angularInfluenceWeight:
     serializedVersion: 2
     m_Curve:

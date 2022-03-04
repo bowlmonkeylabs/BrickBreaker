@@ -16,6 +16,8 @@ namespace BML.Scripts
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float aimTurnSpeed = 5f;
         [SerializeField] private float maxReleaseTime = 3f;
+        [SerializeField] private float acceleration = .025f;
+        [SerializeField] private float deacceleration = .01f;
         [SerializeField] private AnimationCurve angularInfluenceWeight;
         [SerializeField] private float maxAngularInfluence = 60f;
         [SerializeField] private string ballTag = "Ball";
@@ -53,7 +55,26 @@ namespace BML.Scripts
                 aimTargeter.rotation = Quaternion.AngleAxis(currentAimAngle, Vector3.back);
             }
             else if (!isBallCaught)
-                paddleRb.velocity = moveInput * moveSpeed;
+            {
+                float newSpeed = 0f;
+                
+                //Accelerate/DeAccelerate from current Speed to target speed
+                float dummySpeed = 0f;
+                float targetSpeed = 0f;
+
+                float currentSpeed = paddleRb.velocity.magnitude;
+                targetSpeed = Mathf.Abs((moveInput * moveSpeed).x);
+            
+                if (targetSpeed > Mathf.Abs(currentSpeed))
+                    newSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed,
+                        ref dummySpeed, acceleration);
+                else
+                    newSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed,
+                        ref dummySpeed, deacceleration);
+
+                paddleRb.velocity = newSpeed * moveInput;
+            }
+                
             
         }
 
