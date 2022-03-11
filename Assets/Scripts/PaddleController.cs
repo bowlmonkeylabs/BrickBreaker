@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MyAssets.ScriptableObjects.Variables;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,6 +26,7 @@ namespace BML.Scripts
         [SerializeField] private FloatReference ballSpeed;
         [SerializeField] private BoolReference isGameStarted;
         [SerializeField] private TimerVariable releaseTimer;
+        [SerializeField] private Dictionary<string, string> testDict;
 
         private LTDescr releaseTween;
         private Vector2 moveInput;
