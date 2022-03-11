@@ -2761,7 +2761,6 @@ GameObject:
   - component: {fileID: 1095148098}
   - component: {fileID: 1095148096}
   - component: {fileID: 1095148100}
-  - component: {fileID: 1095148099}
   - component: {fileID: 1095148095}
   - component: {fileID: 1095148097}
   m_Layer: 0
@@ -2948,73 +2947,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1095148099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095148094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2170446eb74f406bb5c599d8721deccc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  ballRb: {fileID: 1095148096}
-  initialDirection: {x: 1, y: 1}
-  ballSpeed:
-    UseConstant: 0
-    EnableInstanceOptions: 0
-    InstanceName: '{I} '
-    InstancePath: IntermediateProperties
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 2e603bb28e97428448ad539d24c72359, type: 2}
-  onGameStarted: {fileID: 11400000, guid: b99d3c7830166304184309f52d23eab3, type: 2}
-  brickBroken: {fileID: 11400000, guid: 1f94d05d12bb9ac4492d534ff1d20ba1, type: 2}
-  bricksParent: {fileID: 1452940176}
-  maxBallSpeed: 16
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.552355
-      outSlope: 1.552355
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.19389072
-    - serializedVersion: 3
-      time: 0.50136817
-      value: 0.48197758
-      inSlope: 0.3720529
-      outSlope: 0.3720529
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.22774932
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1.7938327
-      outSlope: 1.7938327
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.08840865
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!61 &1095148100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3024,7 +2956,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1095148094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: e84383b575889e545b5e81ad27933aba, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
